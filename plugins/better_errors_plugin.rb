@@ -1,7 +1,8 @@
 ##
 # Better Errors plugin on Padrino
 #
-# https://github.com/charliesome/better_errors
+# https://github.com/grogui/better_errors
+# forked from https://github.com/charliesome/better_errors
 #
 
 GEMFILE = <<-GEMFILE
@@ -9,7 +10,6 @@ GEMFILE = <<-GEMFILE
 # Better Errors
 group :development do
   gem "better_errors"
-  gem "binding_of_caller"
 end
 
 GEMFILE
@@ -19,7 +19,6 @@ CONFIG = <<-CONFIG
 
 # Setup better_errors
 if Padrino.env == :development
-  require 'better_errors'
   Padrino::Application.use BetterErrors::Middleware
   BetterErrors.application_root = PADRINO_ROOT
   BetterErrors.logger = Padrino.logger
